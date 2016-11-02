@@ -1,0 +1,18 @@
+<ion-view title="私信">
+	<ion-spinner icon="ripple" id="spinner" style="position:absolute;top:50%;left:50%;"></ion-spinner>
+	<ion-content lazy-scroll class="has-tabs-top">
+		<ion-refresher id="refresher" spinner='ripple'></ion-refresher>
+	  	<div class="item item-avatar "   ng-repeat="item in data">
+	  	    <img image-lazy-src="{{item.dm.recipient.profile_image_url}}" image-lazy-distance-from-bottom-to-load="200"  image-lazy-loader='ios-small'>
+	  	    <div class="row">
+	  	      <h2 class="col balanced col-75 ">
+	  	        <a href="#/tab/user" class="username">{{item.dm.recipient.name}}</a>
+	  	      </h2>
+	  	      <span id="createtime" class="col col-25  stable">
+	  	        {{item.dm.created_at|formattime}}
+	  	      </span>
+	  	    </div>
+	  	    <a ng-bind-html="item.dm.text | linkformat" href="#/tab/conversation/{{item.otherid}}" class="text"  ﻿​nav-transition="ios" nav-direction="forward"></a>
+	  	</div>
+	</ion-content>
+</ion-view>

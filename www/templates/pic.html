@@ -1,0 +1,12 @@
+<ion-view view-title="照片"  hide-tabs='true'>
+	<ion-spinner icon="ripple" id="spinner" style="position:absolute;top:50%;left:50%;"></ion-spinner>
+	<ion-content lazy-scroll>
+		<ion-refresher id="refresher" spinner='ripple'></ion-refresher>
+	  	<div class="picBox">
+	  		<div  ng-repeat="item in data" style="width:{{item.photo.imageurl.width*200/item.photo.imageurl.height}}px;flex-grow:{{item.photo.imageurl.width*200/item.photo.imageurl.height}}">
+	  			<i style="padding-bottom:{{item.photo.imageurl.height/item.photo.imageurl.width*100}}%"></i>
+	  			<img image-lazy-src="{{item.photo.imageurl}}" image-lazy-distance-from-bottom-to-load="200"  image-lazy-loader='ios-small'>
+	  		</div>
+	  	</div>
+	</ion-content>
+</ion-view>

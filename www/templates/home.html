@@ -1,0 +1,9 @@
+<ion-view view-title="首页">
+    <ion-nav-buttons side="right">
+      <button class=" button button-icon  icon header-icon ion-ios-search"></button>
+    </ion-nav-buttons>
+    <ion-content lazy-scroll>
+    	<ion-refresher  spinner='ios-small'  on-refresh='dorefresh(data[0].id)'></ion-refresher>
+      <timeline></timeline>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<div class="list">
+  <div class="item item-avatar">
+      <img ng-src="{{msgdata.user.profile_image_url}}">
+      <div class="row">
+        <h2 class="col balanced col-75 ">
+          <a href="#/tab/user" class="username">{{msgdata.user.name}}</a>
+        </h2>
+        <span id="createtime" class="col col-25  stable">
+          {{msgdata.created_at|formattime}}
+        </span>
+      </div>
+      <p ng-bind-html="msgdata.text | linkformat"></p>
+      <p>
+        <!-- <a ng-href="{{msgdata.photo.largeurl}}" class="fancybox">
+          <img image-lazy-src="{{msgdata..photo.thumburl}}"
+          alt="" image-lazy-distance-from-bottom-to-load="200"
+           image-lazy-loader='ios-small'/>
+        </a> -->
+       
+      </p>
+      <div class="row">
+        <span class="source col col-40" >{{msgdata.source|formatsource}}</span>
+        <span class="icon ion-ios-chatbubble-outline col col-offset-50 col-10" ng-click="openPopover($event)"></span>
+      </div>
+  </div>
+</div>

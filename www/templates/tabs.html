@@ -1,0 +1,18 @@
+<ion-tabs class="tabs-icon-center tabs-light" ng-class="{'tabs-item-hide': $root.hideTabs}">
+  <ion-tab icon="ion-home"  href="#/tab/home">
+    <ion-nav-view name="home-tab"></ion-nav-view>
+  </ion-tab>
+  <ion-tab icon="ion-ios-chatbubble"  href="#/tab/mentions/at">
+    <ion-nav-view name="mentions-tab"></ion-nav-view>
+  </ion-tab>
+  <ion-tab icon="ion-plus-circled" ng-click="doPost()">
+    <!-- <ion-nav-view name="post-tab"></ion-nav-view> -->
+  </ion-tab>
+  <ion-tab icon="ion-planet" href="#/tab/browse">
+    <ion-nav-view name="browse-tab"></ion-nav-view>
+  </ion-tab>
+  <ion-tab icon="ion-android-person"  href="#/tab/my">
+    <ion-nav-view name="my-tab"></ion-nav-view>
+  </ion-tab>
+  </ion-tabs>
+

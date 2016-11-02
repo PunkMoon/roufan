@@ -1,0 +1,34 @@
+<div>
+  <ion-list can-swipe="true">
+    <ion-item class="item-avatar item-text-wrap spinner"    ng-repeat="item in data">
+          <img image-lazy-src="{{item.user.profile_image_url}}" image-lazy-distance-from-bottom-to-load="200"  image-lazy-loader='ios-small' >
+        <div class="row">
+          <h2 class="col balanced col-67 ">
+            <a href="#" class="username">{{item.user.name}}</a>
+          </h2>
+          <span id="createtime" class="col col-33 stable">
+            {{item.created_at|formattime}}
+          </span>
+        </div>
+        <p ng-bind-html="item.text | linkformat" ui-sref="detail({msgId:'{{item.id}}'})" class="text"  ﻿​nav-transition="ios" nav-direction="forward"></p>
+       <!--  <p ng-bind-html="item.text | linkformat" ng-click="linkToDetail(item.id)" class="text"  ﻿​nav-transition="ios" nav-direction="forward"></p>  -->
+        <p ng-if=item.photo.thumburl class="imgBox  nospinner">
+            <img image-lazy-src="{{item.photo.thumburl}}" 
+            alt="" image-lazy-distance-from-bottom-to-load="200"
+             image-lazy-loader='ios-small' ng-click="viewImg(item.photo.largeurl,$index)"/>
+        </p>
+        <ion-option-button class="button-at  icon ion-at " ng-click="share(item)">
+        </ion-option-button>
+        <ion-option-button class="button-zf  icon ion-shuffle " ng-click="edit(item)">
+          
+        </ion-option-button>
+        <ion-option-button class="button-love icon ion-android-favorite-outline" ng-click="share(item)">
+        </ion-option-button>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll
+      on-infinite="loadMore(data[data.length-1].id)"
+      distance="1%" 
+      spinner='ios-small' immediate-check='false' >
+    </ion-infinite-scroll>
+</div>

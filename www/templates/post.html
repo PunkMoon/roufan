@@ -1,0 +1,25 @@
+<ion-modal-view ng-controller="postCtrl">
+	<ion-header-bar class="bar-calm" align-title="center">
+		<button class="button button-clear button-primary " ng-click="close()">
+			取消
+		</button>
+		<h1 class="title">你在做什么</h1>
+		<button class="button button-clear button-primary " ng-click="postByRF()">
+			发送
+		</button>
+	</ion-header-bar>
+	<ion-content id="postCont">
+		<textarea id="postMsg" ng-model='data.message'></textarea>
+		<div class="postImg">
+			<img ng-src="{{picUrl}}" alt="">
+		</div>
+		
+	</ion-content> 
+	<ion-footer-bar align-title="left" class="bar-light">
+		<div class="button-bar">
+		  <span class="button button-icon ion-ios-camera-outline" ng-click="takePic()"></span>
+		  <span class="button button-icon ion-images"></span>
+		  <span class="button button-icon ion-ios-navigate-outline"></span>
+		</div>
+	</ion-footer-bar>
+</ion-modal-view>

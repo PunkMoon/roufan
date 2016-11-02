@@ -1,0 +1,23 @@
+<ion-view title="关注请求">
+    <ion-content lazy-scroll class="has-tabs-top">
+      <ion-refresher id="refresher" spinner='ripple' on-refresh='dorefresh()'></ion-refresher>
+      <div class="item item-avatar item-button-right"   ng-repeat="item in data">
+          <img image-lazy-src="{{item.profile_image_url}}" image-lazy-distance-from-bottom-to-load="200"  image-lazy-loader='ios-small'>
+          <div>
+          	<h2>{{item.name}}</h2>
+          	<p>{{item.id}}</p>
+          </div>
+          <button class="button nobg-btn checkmark-btn" ng-click="accept('{{item.id}}')" ng-hide="requested">
+          	<i class="icon ion-ios-checkmark-empty"></i>
+          </button>
+          <button class="button nobg-btn close-btn" ng-click="deny('{{item.id}}')" ng-hide="requested">
+          	<i class="icon ion-ios-close-empty"></i>
+          </button>
+          <button class="button nobg-btn close-btn" ng-click="follow('{{item.id}}')" ng-show="following">
+          	<i class="icon ion-ios-personadd"></i>
+          </button>
+      </div>
+      <div>
+      </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<style>
+		div{
+			height: 100vh;
+			width: 100vw;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 10;
+			background: rgba(0,0,0,0.4);
+		}
+		div img{
+			display: block;
+			position:absolute;
+			top: 0;
+			left: 0;
+			right: 0px;
+			bottom: 0px;
+			margin: 0 auto;
+			margin-top: 49px;
+			/* transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%; */
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+
+	</div>
+	<script>
+	var json={"status":0,"reason":{"statusCode":400,"data":"{\"request\":\"\\/statuses\\/update.json\",\"error\":\"\\u4fe1\\u606f\\u53d1\\u9001\\u5931\\u8d25\\uff0c\\u8bf7\\u8f93\\u5165\\u4fe1\\u606f\\u5185\\u5bb9\\uff01\"}"}};
+			console.log(typeof json.reason.data);
+		var a=function(content){
+				var userlink='<a href="#/tab/detail" class="former"></a>';
+				/*/<a[^>]*href=['"]([^"]*)['"][^>]*>(.*?)<\/a>/g*/
+				var reg=/<a[\s]+href=['"]([^"]*)['"][\s]+class="former">/g;
+				var apilink=reg.exec(content);
+				return apilink;
+			};
+			var str='右边太小看山东人的劝酒了。「@<a href="http://fanfou.com/famiuer2" class="former">法缪尔.</a> easy，不想喝就不喝吧，当年同学不喝酒还生气= =真是够傻逼的 转@<a href="http://fanfou.com/akhai" class="former">黑爷</a> 啊 对不起 我不是笑你…… 转@<a href="http://fanfou.com/senduoh" class="former">剪刀手蟹德华</a> 是我。。。 转@<a href="http://fanfou.com/akhai" class="former">黑爷</a> 我认识一个一杯啤酒就倒的山东人 哈哈哈 转@<a href="http://fanfou.com/youngguysam" class="former">sammeow</a> 一头扎进山东人的酒桌…不知道能不能全",';
+	</script>
+</body>
+</html>

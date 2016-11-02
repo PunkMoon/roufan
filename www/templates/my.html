@@ -1,0 +1,85 @@
+<ion-view view-title='<i class="icon ion-locked" style="margin-right:5px;"></i>{{data.name}}' >
+	<ion-nav-buttons side="right">
+	  <i class="button button-clear ion-ios-more"></i>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="left">
+	  <i class="button button-clear ion-person-add"></i>
+	</ion-nav-buttons>
+	<ion-content >
+		<div class="row" id="myDetail">
+			<div class="col col-25">
+				<img src="{{data.profile_image_url_large}}" alt="" >
+				<i class="icon ion-locked"></i>
+			</div>
+			<section class="col col-75">
+				<div class="button-bar">
+					<a href="#/tab/status/{{data.id}}" class="button">
+						<span class="fw-600">{{data.statuses_count}}</span>
+						<span>消息</span>
+					</a>
+					<a href="#/tab/friends/{{data.id}}" class="button">
+						<span class="fw-600">{{data.friends_count}}</span>
+						<span>关注</span>
+					</a>
+					<a href="#/tab/followers/{{data.id}}" class="button" >
+						<span class="fw-600">{{data.followers_count}}</span>
+						<span>被关注</span>
+					</a>
+				</div>
+				<div class="button editProfile fw-600">
+					   编辑个人信息
+				</div>
+			</section>
+		</div>
+		<div class="list list-my">
+			<div class="item item-divider">
+			    
+			 </div>
+			<a class="item item-icon-left item-icon-right" href="#/tab/fav/{{data.id}}">
+			   <i class="icon ion-heart"></i>
+			   收藏
+			   <i class="icon ion-ios-arrow-right"></i>
+			 </a>
+			 <a class="item item-icon-left item-icon-right" href="#/tab/pic/{{data.id}}">
+			    <i class="icon ion-camera"></i>
+			    照片
+			    <i class="icon ion-ios-arrow-right"></i>
+			  </a>
+			  <a class="item item-icon-left item-icon-right" href="#/tab/blacklist/{{data.id}}">
+			     <i class="icon ion-email"></i>
+			     黑名单
+			     <i class="icon ion-ios-arrow-right"></i>
+			   </a>
+			   <div class="item item-divider">
+			       
+			    </div>
+			    <a class="item item-icon-left item-icon-right" href="#">
+			       <i class="icon ion-tshirt"></i>
+			       主题
+			       <i class="icon ion-ios-arrow-right"></i>
+			     </a>
+		</div>
+		<ul class="list">
+			<li class="item item-icon-left item-toggle">	   
+		       <i class="icon ion-ios-moon icon-gray"></i>
+		       夜间模式
+		       <label class="toggle toggle-balanced">
+	              <input type="checkbox">
+	              <div class="track">
+	                <div class="handle"></div>
+	              </div>
+	            </label>   
+			</li>
+			<li class="item item-icon-left item-toggle">	   
+		       <i class="icon ion-ios-time icon-gray"></i>
+		       时光机
+		       <label class="toggle toggle-balanced">
+	              <input type="checkbox">
+	              <div class="track">
+	                <div class="handle"></div>
+	              </div>
+	            </label>	   
+			</li>
+		</ul>
+	</ion-content>
+</ion-view>

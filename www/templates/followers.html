@@ -1,0 +1,22 @@
+<ion-view view-title="关注的人" hide-tabs='true' cache-view="true">
+	<ion-spinner icon="ripple" id="spinner" style="position:absolute;top:50%;left:50%;"></ion-spinner>
+	<ion-content lazy-scroll>
+		<ion-refresher id="refresher" spinner='ripple'></ion-refresher>
+	  	<ion-list  can-swipe="true">
+	  	  <ion-item ng-repeat="item in data"
+	  	            class="item-avatar">
+	  	    <img image-lazy-src="{{item.profile_image_url}}" image-lazy-distance-from-bottom-to-load="200"  image-lazy-loader='ios-small'>
+	  	    <h2>{{item.name}}</h2>
+	  	    <p>{{item.id}}</p>
+	  	    <ion-option-button class="button-positive"
+	  	                       ng-click="share(item)">
+	  	      取消关注
+	  	    </ion-option-button>
+	  	    <ion-option-button class="button-info"
+	  	                       ng-click="edit(item)">
+	  	      拉黑
+	  	    </ion-option-button>
+	  	  </ion-item>
+	  	</ion-list>
+	</ion-content>
+</ion-view>

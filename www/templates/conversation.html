@@ -1,0 +1,46 @@
+<ion-view title="对话" hide-tabs='true'>
+	<ion-spinner icon="ripple" id="spinner" style="position:absolute;top:50%;left:50%;"></ion-spinner>
+	<ion-content>
+		<ion-refresher id="refresher" spinner='ripple'></ion-refresher>
+	  	<div ng-repeat="message in data" class="message-wrapper">
+	  	    <div ng-if="user!==message.sender_id">
+	  	      <img class="profile-pic left" 
+	  	            ng-src="{{message.sender.profile_image_url}}" />
+	  	        <div class="chat-bubble left">
+	  	            <div class="message" ng-bind-html="message.text">
+	  	            </div>
+	  	            <div class="message-detail left">
+	  	                <span>{{message.created_at|formattime}}</span>
+	  	            </div>
+	  	        </div>
+	  	        
+	  	    </div>
+	  	    <div ng-if="user==message.sender_id">
+	  	      <img class="profile-pic right" 
+	  	            ng-src="{{message.sender.profile_image_url}}" />
+	  	        <div class="chat-bubble right">
+	  	            <div class="message" ng-bind-html="message.text">
+	  	            </div>
+	  	            <div class="message-detail right">
+	  	                <span>{{message.created_at|formattime}}</span>
+	  	            </div>
+	  	        </div>
+	  	        
+	  	    </div>
+	  	    <div class="cf"></div>
+	  	</div>
+	  </ion-content>
+	  	<form name="sendMessageForm">
+	  	    <ion-footer-bar class="bar-stable item-input-inset message-footer" >
+	  	        <label class="item-input-wrapper">
+	  	            <textarea msd-elastic ng-model="insert.message" value="" placeholder="给 {{receiveUser}}发送私信" required minlength="1" maxlength="1500" ></textarea>
+	  	        </label>
+	  	        <div class="footer-btn-wrap">
+	  	          <button  ng-disabled="insert.message === ''" class="button button-icon icon ion-ios-paperplane footer-btn" type="submit"
+	  	              >
+	  	          </button>
+	  	        </div>
+	  	    </ion-footer-bar>
+	  	</form>
+	 
+</ion-view>

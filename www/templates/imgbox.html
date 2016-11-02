@@ -1,0 +1,15 @@
+<div class="modal image-modal transparent" ng-click="closeModal()">
+	<ion-slide-box on-slide-changed='slideChanged(index)' show-page='false' active-slide='activeSlide' ng-if='imgSlide'>
+		<ion-slide ng-repeat="image in allImages">
+		  	<ion-scroll zooming="true" direction="xy" delegate-handle="zoom-pane" class="zoom-pane" min-zoom="1" scrollbar-x="false" scrollbar-y="false"> 
+  				<img class="fullscreen-image" image-lazy-src="{{image.src}}" 
+            alt="" image-lazy-distance-from-bottom-to-load="200"
+             image-lazy-loader='ios-small'/>
+  			</ion-scroll>
+		</ion-slide>
+	</ion-slide-box>
+	  	<ion-scroll zooming="true" direction="xy" delegate-handle="zoom-pane" class="zoom-pane" min-zoom="1" max-zoom='10' scrollbar-x="false" scrollbar-y="false" ng-hide="imgSlide"> 
+			<img class="fullscreen-image" image-lazy-src="{{imageUrl}}" alt="" image-lazy-distance-from-bottom-to-load="200"
+             image-lazy-loader='ios-small'/>
+		</ion-scroll>
+</div>
