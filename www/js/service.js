@@ -1,4 +1,4 @@
-angular.module('starter.services',[])
+angular.module('app.services',[])
 .service('roufanservice',function($http,$q,$ionicPopup,$timeout){
 	
 	return {

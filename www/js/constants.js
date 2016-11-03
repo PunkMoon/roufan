@@ -1,4 +1,4 @@
-angular.module('starter.constants',[])
+angular.module('app.constants',[])
  
 .constant('AUTH_EVENTS', {
   notAuthenticated: 'auth-not-authenticated',/*认证*/

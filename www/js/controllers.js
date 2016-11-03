@@ -1,4 +1,4 @@
-angular.module("starter.controllers",[])
+angular.module("app.controllers",[])
 /*将页面中的用户链接替换*/
 .filter('linkformat',function() {
 	return function(content){

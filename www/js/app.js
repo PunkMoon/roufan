@@ -1,5 +1,5 @@
-angular.module('starter', ['ionic', 'starter.controllers','starter.services',
-  'ngCordova','starter.directives','ionicLazyLoad','starter.constants','starter.elastic'])
+angular.module('app', ['ionic', 'app.controllers','app.services',
+  'ngCordova','app.directives','ionicLazyLoad','app.constants','app.elastic'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
