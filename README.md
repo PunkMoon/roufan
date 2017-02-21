@@ -1,5 +1,5 @@
-# Ionic-Fanfou
-基于angular及ionic的一款饭否第三方WebApp
+# roufan
+基于angular的一款饭否第三方WebApp
 
 ## 介绍
 1.需要与[node-xauth-fanfou](https://github.com/birdplane9527/node-xauth-fanfou)配合使用。<br/>
